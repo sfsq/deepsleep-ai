@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSleep</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <button class="new-chat-btn" onclick="newChat()" id="newChatBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14m-7-7h14"></path>
+            </svg>
+            新对话
+        </button>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLanguage('zh')" id="zhBtn">中文</button>
+            <button class="lang-btn" onclick="switchLanguage('en')" id="enBtn">English</button>
+        </div>
+        <div class="chat-list" id="chatList"></div>
+        <div class="user-info">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="5"></circle>
+                <path d="M20 21a8 8 0 10-16 0"></path>
+            </svg>
+            <span>user</span>
+            <span style="margin-left: auto; font-size: 12px;" id="currentTime"></span>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="chat-container" id="chatContainer"></div>
+        <div class="input-container">
+            <div class="input-box" id="inputBox">
+                <textarea placeholder="输入消息，Enter 发送，Shift + Enter 换行" id="userInput"></textarea>
+                <div class="bottom-bar">
+                    <div class="input-options">
+                        <button class="option-btn" id="deepThinkBtn" onclick="toggleOption('deepThink')">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 2a10 10 0 0 1 10 10c0 4.42-2.87 8.17-6.84 9.5a2 2 0 0 1-2.32 0C8.87 20.17 6 16.42 6 12A10 10 0 0 1 12 2z" />
+                            </svg>
+                            深度思考
+                        </button>
+                        <button class="option-btn" id="webSearchBtn" onclick="toggleOption('webSearch')">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                            联网搜索
+                        </button>
+                        <button class="send-btn" id="sendButton" onclick="sendMessage()" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4l20-7z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
